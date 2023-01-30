@@ -178,4 +178,123 @@ public class ProfessionnelDaoImpl implements ProfessionnelDao {
 		}
 	}		
 
+	
+	
+	@Override
+	public List<ProfessionnelBean> listerSelonChoix(String description , String  emploie , String Ville ) throws DaoException {
+		List<ProfessionnelBean> professionnels = new ArrayList<ProfessionnelBean>();
+		Connection connexion = null;
+		Statement statement = null;
+		ResultSet resultat = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			statement = connexion.createStatement();
+			resultat = statement.executeQuery("SELECT *  FROM professionnel where   emploie='"+emploie+"' and ville = '"+Ville+"';");
+
+			while (resultat.next()) {
+				String cin = resultat.getString("cin");
+				String nom = resultat.getString("nom");
+				String prenom = resultat.getString("prenom");
+				String email = resultat.getString("email");
+				String ville = resultat.getString("ville");
+				String adresse = resultat.getString("adresse");
+				String empoloie = resultat.getString("emploie");
+				String surMoi = resultat.getString("surMoi");
+				String numTel = resultat.getString("numTel");
+				String sexe = resultat.getString("sexe");
+				String motdepasse = resultat.getString("motdepasse");
+
+				ProfessionnelBean professionnel =  new ProfessionnelBean();
+				professionnel.setCin(cin);
+				professionnel.setNom(nom);
+				professionnel.setPrenom(prenom);
+				professionnel.setEmail(email);
+				professionnel.setVille(ville);
+				professionnel.setAdresse(adresse);
+				professionnel.setEmploie(empoloie);
+				professionnel.setMotdepasse(motdepasse);
+				professionnel.setSurMoi(surMoi);
+				professionnel.setNumTel(numTel);
+				professionnel.setSexe(sexe);
+				
+				
+				
+				professionnels.add(professionnel);
+
+			}
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode listerselonChoix professionnel 1");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.close();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode listerselonCHoix professionnel 2");
+			}
+		}
+		return professionnels;
+
+	}
+
+	@Override
+	public ProfessionnelBean listerUn(String Cin) throws DaoException {
+		Connection connexion = null;
+		Statement statement = null;
+		ResultSet resultat = null;
+		ProfessionnelBean professionnel =  new ProfessionnelBean();
+
+
+		try {
+			connexion = daoFactory.getConnection();
+			statement = connexion.createStatement();
+			resultat = statement.executeQuery("SELECT *  FROM professionnel where cin = '"+Cin+"'; ");
+
+			while (resultat.next()) {
+				String cin = resultat.getString("cin");
+				String nom = resultat.getString("nom");
+				String prenom = resultat.getString("prenom");
+				String email = resultat.getString("email");
+				String ville = resultat.getString("ville");
+				String adresse = resultat.getString("adresse");
+				String empoloie = resultat.getString("emploie");
+				String surMoi = resultat.getString("surMoi");
+				String numTel = resultat.getString("numTel");
+				String sexe = resultat.getString("sexe");
+				String motdepasse = resultat.getString("motdepasse");
+
+				professionnel.setCin(cin);
+				professionnel.setNom(nom);
+				professionnel.setPrenom(prenom);
+				professionnel.setEmail(email);
+				professionnel.setVille(ville);
+				professionnel.setAdresse(adresse);
+				professionnel.setEmploie(empoloie);
+				professionnel.setMotdepasse(motdepasse);
+				professionnel.setSurMoi(surMoi);
+				professionnel.setNumTel(numTel);
+				professionnel.setSexe(sexe);
+				
+				
+				
+
+			}
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode listerselonChoix professionnel 1");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.close();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode listerselonCHoix professionnel 2");
+			}
+		}
+		return professionnel;		
+	}
+	
+	
+	
+	
 }

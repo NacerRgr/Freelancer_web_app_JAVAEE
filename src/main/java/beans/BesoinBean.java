@@ -24,11 +24,12 @@ public class BesoinBean extends Publication{
 	@Override
 	public String toString() {
 		return "BesoinBean [titre=" + titre + ", description=" + description + ", prix=" + prix + ", Status=" + Status
-				+ ", cin=" + cin + ", Categoirie=" + Categoirie + ", idBesoin=" + idBesoin + ", getCategoirie()="
-				+ getCategoirie() + ", getIdBesoin()=" + getIdBesoin() + ", getTitre()=" + getTitre()
-				+ ", getDescription()=" + getDescription() + ", getPrix()=" + getPrix() + ", getStatus()=" + getStatus()
-				+ ", getCin()=" + getCin() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+				+ ", cin=" + cin + ", Categoirie=" + Categoirie + ", idBesoin=" + idBesoin + ", getNom()=" + getNom()
+				+ ", getPrenom()=" + getPrenom() + ", getCategoirie()=" + getCategoirie() + ", getIdBesoin()="
+				+ getIdBesoin() + ", getTitre()=" + getTitre() + ", getDescription()=" + getDescription()
+				+ ", getPrix()=" + getPrix() + ", getStatus()=" + getStatus() + ", getCin()=" + getCin()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 
 	

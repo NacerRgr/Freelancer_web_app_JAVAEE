@@ -5,6 +5,8 @@ public class ProfessionnelBean extends Utilisateur {
 	private String emploie ;
 	private String surMoi;
 	
+	private int nbrEtoitle;
+	
 	public ProfessionnelBean(String cin, String nom, String prenom, String email, String ville, String adresse,
 			String motdepasse, String sexe, String numTel , String emploie , String surMoi) {
 		super(cin, nom, prenom, email, ville, adresse, motdepasse, sexe, numTel);
@@ -16,6 +18,31 @@ public class ProfessionnelBean extends Utilisateur {
 	
 
 	
+	public ProfessionnelBean(String cin, String nom, String prenom, String email, String ville, String adresse,
+			String motdepasse, String sexe, String numTel, String emploie, String surMoi, int nbrEtoitle) {
+		super(cin, nom, prenom, email, ville, adresse, motdepasse, sexe, numTel);
+		this.emploie = emploie;
+		this.surMoi = surMoi;
+		this.nbrEtoitle = nbrEtoitle;
+	}
+
+
+
+
+	public int getNbrEtoitle() {
+		return nbrEtoitle;
+	}
+
+
+
+
+	public void setNbrEtoitle(int nbrEtoitle) {
+		this.nbrEtoitle = nbrEtoitle;
+	}
+
+
+
+
 	public String getSurMoi() {
 		return surMoi;
 	}

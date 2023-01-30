@@ -207,6 +207,109 @@ public class BesoinDaoImpl  implements BesoinDao{
 		return Besoins;
 
 	}
+
+	@Override
+	public List<BesoinBean> lister2() throws DaoException {
+		List<BesoinBean> Besoins = new ArrayList<BesoinBean>();
+		Connection connexion = null;
+		Statement statement = null;
+		ResultSet resultat = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			statement = connexion.createStatement();
+			resultat = statement.executeQuery("SELECT b.Status , b.idBesoin , b.titreBesoin , b.description , b.prixApayer  , b.nomCategorie  , c.nom , c.prenom  FROM besoin b , client  c  where c.cin = b.cin;");
+
+			while (resultat.next()) {
+				String titreBesoin = resultat.getString("titreBesoin");
+				String description = resultat.getString("description");
+				Float prix = resultat.getFloat("prixApayer");
+				String nomCategorie  =  resultat.getString("nomCategorie");
+				String nomClient = resultat.getString("nom");
+				String prenomClient = resultat.getString("prenom");
+				int id = resultat.getInt("idBesoin");
+				String Status = resultat.getString("Status");
+				BesoinBean Besoin =  new BesoinBean();
+				 Besoin.setTitre(titreBesoin);
+				 Besoin.setDescription(description);
+				 Besoin.setPrix(Float.toString(prix));
+				 Besoin.setCategoirie(nomCategorie);
+				 Besoin.setNom(nomClient);
+				 Besoin.setPrenom(prenomClient);
+				 Besoin.setIdBesoin(id);
+				 Besoin.setStatus(Status);
+				 Besoins.add(Besoin);
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.close();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode lister Besoin 2");
+			}
+		}
+		return Besoins;
+	}
+
+	@Override
+	public void delete1(int idBesoin) throws DaoException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			preparedStatement = connexion.prepareStatement("delete from besoin  where idBesoin = ?;");
+			preparedStatement.setInt(1, idBesoin);
+			
+			preparedStatement.executeUpdate();
+			connexion.commit();
+
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données  table besoin method delete 1 ");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.rollback();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données  table besoin method delete 2");
+			}
+		}						
+	}
+
+	@Override
+	public void Accepter(int idBesoin) throws DaoException {
+		
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			preparedStatement = connexion.prepareStatement("update besoin set Status  = ? where idBesoin = ?");
+			preparedStatement.setString(1, "accepter");
+			preparedStatement.setInt(2, idBesoin);
+			
+
+			preparedStatement.executeUpdate();
+			connexion.commit();
+
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données ou un probleme dans la methode modifier besoin  1");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.rollback();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données  ou un probleme dans la methode modifier  besoin 2");
+			}
+		}
+				
+	}
 	
 	
 	

@@ -53,4 +53,18 @@ public class DaoFactory {
     }
     
     
+    
+    public InvitationPDao getInvitaionP() {
+    	return new InvitaionPdaoImpl(this);
+    }
+    
+    
+    public AvisClientsDao getAvisClient() {
+    	return new AvisClientDaoImpl(this);
+    }
+    
+    public ServiceDao getServices()
+    {
+    	return  new ServiceDaoImpl(this);
+    }    
 }

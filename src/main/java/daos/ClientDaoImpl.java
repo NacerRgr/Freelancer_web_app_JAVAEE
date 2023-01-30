@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.ClientBean;
+import beans.EvaluationClient;
+import beans.ProgresProf;
 import beans.Utilisateur;
+import beans.mesInvitations;
 
 public class ClientDaoImpl implements ClientDao {
 
@@ -101,7 +104,7 @@ public class ClientDaoImpl implements ClientDao {
 	}
 
 	@Override
-	public void delete(String cin) throws DaoException {
+	public void delete1(String cin) throws DaoException {
 		Connection connexion = null;
 		PreparedStatement preparedStatement = null;
 
@@ -114,14 +117,14 @@ public class ClientDaoImpl implements ClientDao {
 			connexion.commit();
 
 		} catch (SQLException e) {
-			throw new DaoException("Impossible de communiquer avec la base de données");
+			throw new DaoException("Impossible de communiquer avec la base de données 11xxx1");
 		} finally {
 			try {
 				if (connexion != null) {
 					connexion.rollback();
 				}
 			} catch (SQLException e) {
-				throw new DaoException("Impossible de communiquer avec la base de données");
+				throw new DaoException("Impossible de communiquer avec la base de données 222");
 			}
 		}		
 	}
@@ -159,7 +162,216 @@ public class ClientDaoImpl implements ClientDao {
 				throw new DaoException("Impossible de communiquer avec la base de données  ou un probleme dans la methode modifier 2");
 			}
 		}
-	}		
+	}
+
+	@Override
+	public List<mesInvitations> afficher(String cinClient) throws DaoException {
+
+		List<mesInvitations> MesInvitaions = new ArrayList<mesInvitations>();
+		Connection connexion = null;
+		Statement statement = null;
+		ResultSet resultat = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			statement = connexion.createStatement();
+			resultat = statement.executeQuery("select p.nom , p.prenom , p.emploie , i.EtatInvitation , i.id from professionnel p , invitationc i  where p.cin = i.cinP and i.cinC='"+cinClient+"';");
+
+			while (resultat.next()) {
+		
+				
+				String nom = resultat.getString("nom");
+				String prenom = resultat.getString("prenom");
+				String emploie = resultat.getString("emploie");
+				String etat = resultat.getString("EtatInvitation");
+				int id = resultat.getInt("id");
+				mesInvitations inv =  new mesInvitations();
+				inv.setNom(nom);
+				inv.setPrenom(prenom);
+				inv.setFonction(emploie);
+				inv.setEtatInv(etat);
+				inv.setId(id);
+				MesInvitaions.add(inv);
+			
+			}
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode afficher 1");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.close();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode afficher 2");
+			}
+		}
+
+	
+		return MesInvitaions;
+	}
+
+	@Override
+	public void inviter(String cinC, String cinP) throws DaoException {
+
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			preparedStatement = connexion
+					.prepareStatement("INSERT INTO invitationc(cinC,cinP) VALUES('"+cinC+"','"+cinP+"');");
+			
+
+			preparedStatement.executeUpdate();
+			connexion.commit();
+
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données inviter() 1");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.rollback();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données inviter() 2 ");
+			}
+		}		
+		
+		
+	}
+
+	@Override
+	public List<ProgresProf> Progres(String CinClient) throws DaoException {
+
+		List<ProgresProf> ProgresProfs = new ArrayList<ProgresProf>();
+		Connection connexion = null;
+		Statement statement = null;
+		ResultSet resultat = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			statement = connexion.createStatement();
+			resultat = statement.executeQuery("select p.nom , p.prenom , p.emploie , p.cin , e.progresP , e.description from professionnel p , evaluation  e  where p.cin = e.cinProf and e.cinClient='"+CinClient+"';");
+
+			while (resultat.next()) {
+		
+				
+				String nom = resultat.getString("nom");
+				String prenom = resultat.getString("prenom");
+				String emploie = resultat.getString("emploie");
+				String progres = resultat.getString("progresP");
+				String cin = resultat.getString("cin");
+				String commentaire =resultat.getString("description");
+				ProgresProf progress =  new ProgresProf();
+				progress.setNom(nom);
+				progress.setPrenom(prenom);
+				progress.setEmpploie(emploie);
+				progress.setProgres(progres);
+				progress.setCin(cin);
+				progress.setCommentaire(commentaire);
+				ProgresProfs.add(progress);
+			
+			}
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode afficher 1");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.close();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données ou il y a un probleme dans la methode afficher 2");
+			}
+		}
+
+	
+		return ProgresProfs;
+	}
+
+	@Override
+	public void Evaluer(EvaluationClient eva) throws DaoException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			preparedStatement = connexion.prepareStatement("update evaluation set nbrEtoileP = ? , description = ?   where cinProf = '"+eva.getCinProf()+"' and cinClient = '"+eva.getCinClient()+"';");
+			preparedStatement.setString(1, eva.getNbrEtoileP());
+			preparedStatement.setString(2, eva.getDesc());
+			System.out.println("im here");
+			
+			preparedStatement.executeUpdate();
+			connexion.commit();
+
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données ou un probleme dans la methode modifier 1");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.rollback();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données  ou un probleme dans la methode modifier 2");
+			}
+		}		
+	}
+
+	@Override
+	public void supprimerInvitationProfessionnel(int id) throws DaoException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			preparedStatement = connexion.prepareStatement("delete from invitationc where id = ?;");
+			preparedStatement.setInt(1,id);
+
+			preparedStatement.executeUpdate();
+			connexion.commit();
+
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données invitationc 1 ");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.rollback();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données invitationc 2");
+			}
+		}				
+	}
+
+	@Override
+	public void AccepterDemande(String cinClient, String cinProf) throws DaoException {
+
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			connexion = daoFactory.getConnection();
+			preparedStatement = connexion
+					.prepareStatement("INSERT INTO evaluation(cinClient,cinProf) VALUES(?,?);");
+			preparedStatement.setString(1, cinClient);
+			preparedStatement.setString(2, cinProf);
+	
+
+			preparedStatement.executeUpdate();
+			connexion.commit();
+
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données");
+		} finally {
+			try {
+				if (connexion != null) {
+					connexion.rollback();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données");
+			}
+		}	
+		
+	}
 
 
 	

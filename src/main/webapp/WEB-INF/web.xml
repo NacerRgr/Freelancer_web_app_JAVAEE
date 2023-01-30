@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
-  <servlet>
-    <description></description>
-    <display-name>AdminDashboard</display-name>
-    <servlet-name>AdminDashboard</servlet-name>
-    <servlet-class>controllers.AdminDashboard</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AdminDashboard</servlet-name>
-    <url-pattern>/AdminDashboard</url-pattern>
-  </servlet-mapping>
-  <display-name>ProjetS3</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>ClientDashboardControll</display-name>
-    <servlet-name>ClientDashboardControll</servlet-name>
-    <servlet-class>controllers.ClientDashboardControll</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ClientDashboardControll</servlet-name>
-    <url-pattern>/ClientDashboardControll</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="5.0">
+	<servlet>
+		<description></description>
+		<display-name>AdminDashboard</display-name>
+		<servlet-name>AdminDashboard</servlet-name>
+		<servlet-class>controllers.AdminDashboard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminDashboard</servlet-name>
+		<url-pattern>/AdminDashboard</url-pattern>
+	</servlet-mapping>
+	<display-name>ProjetS3</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<display-name>ClientDashboardControll</display-name>
+		<servlet-name>ClientDashboardControll</servlet-name>
+		<servlet-class>controllers.ClientDashboardControll</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ClientDashboardControll</servlet-name>
+		<url-pattern>/ClientDashboardControll</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>AdminDashboardControll</display-name>
+		<servlet-name>AdminDashboardControll</servlet-name>
+		<servlet-class>controllers.AdminDashboard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminDashboardControll</servlet-name>
+		<url-pattern>/AdminDashbaord</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>

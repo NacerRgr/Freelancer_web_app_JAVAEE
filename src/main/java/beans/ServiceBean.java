@@ -2,6 +2,8 @@ package beans;
 
 public class ServiceBean extends Publication {
 
+	
+	
 	public ServiceBean() {
 		super();
 		// TODO Auto-generated constructor stub
