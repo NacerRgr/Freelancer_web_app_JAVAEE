@@ -168,7 +168,7 @@ td, th {
 
 		<div class="navdiv">
 
-			<a href="#" class="btn btn-secondary">Achraf Guazir</a>
+			<a href="#" class="btn btn-secondary">${  sessionScope.admin.getNom() }</a>
 
 			<div style="display: inline-block;">
 				<button class="btn btn-outline-primary dropdown-toggle"

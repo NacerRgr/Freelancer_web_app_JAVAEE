@@ -1,0 +1,907 @@
+@font-face {
+	src: url(./fonts/CircularStd-Book.ttf);
+	font-family: 'circular Std';
+}
+
+body, h1, h2, h3, h4, h5, h6, a, p, span {
+	font-family: 'Circular Std';
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.bg-gray {
+	background-color: #f4f7fa;
+}
+
+.pb-100 {
+	padding-bottom: 100px;
+}
+
+.mgp {
+	max-width: 88%;
+	padding-top: 15px;
+	padding-bottom: 35px;
+}
+
+.container {
+	max-width: 1370px;
+	margin: auto;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.main-menu {
+	padding: 16px 0 10px;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+.primary-menu {
+	
+}
+
+.primary-menu li {
+	margin-right: 25px;
+	position: relative;
+	display: inline-block;
+}
+
+.primary-menu li a {
+	font-size: 17px;
+	padding: 45px 0;
+	color: #161c2d !important;
+	font-weight: 500;
+	display: inline-block;
+}
+
+.primary-menu li a i {
+	font-size: 14px;
+}
+
+.primary-menu li:hover>a {
+	color: #0071dc !important;
+}
+
+.default-btn {
+	font-size: 13px;
+	padding: 17px 38px;
+	border-radius: 8px;
+	font-weight: 500;
+	background-color: #fff;
+	color: #161c2d;
+	border: none;
+	display: inline-block;
+	position: relative;
+	transition: .5s;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.default-btn::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: auto;
+	right: 0;
+	background-color: #161c2d;
+	height: 100%;
+	width: 0%;
+	border-radius: 8px;
+	transition: .3s;
+	color: #fff !important;
+	z-index: -1;
+}
+
+.default-btn:hover::after {
+	width: 100%;
+	right: auto;
+	left: 0;
+}
+
+.default-btn i {
+	font-size: 13px;
+	margin-left: 4px;
+	transition: .3s;
+}
+
+.default-btn:hover i {
+	transform: translateX(10px);
+}
+
+.default-btn:focus {
+	box-shadow: none;
+	border-color: none;
+}
+
+/* dropdownmenu */
+.dropdown-items {
+	width: 245px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #fff;
+	opacity: 0;
+	visibility: hidden;
+	transition: .5s;
+	transform: translateY(20px);
+	border-top: 4px solid #0071dc;
+	padding: 20px;
+}
+
+.dropdown-items li {
+	margin-right: 0;
+	display: block;
+}
+
+.dropdown-items li a {
+	padding: 10px;
+	font-size: 15px;
+	display: block;
+}
+
+.primary-menu li:hover .dropdown-items {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0px);
+}
+
+/*===================== hero section css start================= */
+.hero-section {
+	padding: 323px 0 232px 0;
+}
+
+.shape {
+	position: absolute;
+	top: 190px;
+	right: 45px;
+	width: 54%;
+}
+
+.shape2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -9;
+}
+
+.hero-content {
+	
+}
+
+.hero-content h1 {
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+p {
+	color: #7a7a7a;
+	font-weight: 400;
+	line-height: 1.8;
+	font-size: 16px;
+	padding: 10px 0;
+	margin-bottom: 0;
+}
+
+.default-btn-blue {
+	background-color: #0071dc;
+	color: #fff;
+}
+
+.section-title {
+	
+}
+
+.section-title h5 {
+	font-size: 18px;
+	color: #161c2d;
+	margin-bottom: 25px;
+}
+
+.section-title h2 {
+	font-size: 48px;
+	margin: auto;
+	font-weight: 700;
+	color: #161c2d;
+	line-height: 1.1;
+	padding: 0 50px;
+}
+
+.management-items {
+	padding: 60px 35px 50px;
+	box-shadow: 0px 10px 60px 0px rgba(220, 220, 220, 0.27);
+	margin-top: 80px;
+	transition: 0.3s !important;
+}
+
+.management-items:hover {
+	transform: translateY(10px) !important;
+}
+
+.management-items .icon {
+	font-size: 43px;
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+	color: #fff;
+	line-height: 100px;
+	border-radius: 50%;
+	margin-bottom: 40px;
+}
+
+.icon {
+	background-color: #feb100;
+	box-shadow: 0px 10px 30px 0px rgba(254, 177, 0, 0.4);
+}
+
+.icon2 {
+	background-color: #0071dc;
+	box-shadow: 0px 10px 30px 0px rgba(0, 113, 220, 0.4);
+}
+
+.icon3 {
+	background-color: #e92e40;
+	box-shadow: 0px 10px 30px 0px rgba(233, 46, 64, 0.4);
+}
+
+.icon4 {
+	background-color: #96ca6f;
+	box-shadow: 0px 10px 30px 0px rgba(150, 202, 111, 0.4);
+}
+
+.management-items h4 {
+	font-weight: 600;
+	font-size: 22px;
+	color: #161c2d;
+	margin-bottom: 20px;
+}
+
+.management-items p {
+	color: #7a7a7a;
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+.management-items a i {
+	font-size: 22px;
+	color: #161c2d;
+	transition: .3s;
+}
+
+.management-items a i:hover {
+	transform: scale(1.3);
+}
+
+.management-items:hover a i {
+	color: #e73c3e;
+}
+
+/*===========================hero section css end ======================= */
+/*========================== process section css start ====================*/
+.process-wraper {
+	
+}
+
+.blue-title {
+	margin-bottom: 35px;
+}
+
+.blue-title h5 {
+	color: #2869f9;
+}
+
+.blue-title h2 {
+	font-size: 47px;
+	margin-bottom: 30px;
+}
+
+.blue-title p {
+	
+}
+
+.process-image {
+	position: relative;
+	animation: process linear 2s infinite;
+}
+
+@
+keyframes process { 0%{
+	transform: translateY(0px);
+}
+
+50
+%
+{
+transform
+:
+translateY(
+18px
+);
+}
+100
+%
+{
+transform
+:
+translateY(
+0px
+);
+}
+}
+.process-item {
+	margin-bottom: 40px;
+}
+
+.process-item span {
+	display: inline-block;
+	height: 70px;
+	width: 70px;
+	background-color: #edf5fd;
+	color: #0071dc;
+	text-align: center;
+	line-height: 70px;
+	font-size: 25px;
+	margin-right: 30px;
+	border-radius: 50%;
+	transition: .5s;
+}
+
+.process-item span i {
+	
+}
+
+.process-item span:hover {
+	color: #fff;
+	background-color: #0071dc;
+}
+
+.proces-text {
+	
+}
+
+.proces-text h4 {
+	
+}
+
+.proces-text p {
+	
+}
+
+/*========================== process section css end =====================*/
+/*========================== counters area section css start =================*/
+.counter-image {
+	margin-bottom: 30px;
+}
+
+.counter-content {
+	
+}
+
+.counter-content h1 {
+	font-size: 45px;
+	font-weight: 700;
+	color: #1c243e;
+	margin-bottom: 5px;
+}
+
+.counter-content p {
+	color: #0071dc;
+}
+
+/*========================== counters area section css end==================== */
+/* =========================dashboard-area section css start==================== */
+.dashboard-area {
+	background-color: #161c2d;
+}
+
+.dashbord-content .section-title p {
+	padding: 25px 0 38px;
+}
+
+/* =========================dashboard-area section css end==================== */
+
+/*============================ pricing area section css start =================*/
+.pricing-items {
+	padding: 48px 35px;
+	border: 1px solid #ededed;
+	transition: .3s;
+	position: relative;
+}
+
+.pricing-top {
+	border-bottom: 1px solid #ededed;
+	padding-bottom: 38px;
+	margin-bottom: 35px;
+}
+
+.pricing-top h2 {
+	margin-bottom: 15px;
+}
+
+.pricing-top h1 {
+	font-size: 55px;
+	color: #0071dc;
+	font-weight: 400;
+	margin-bottom: 15px;
+}
+
+.pricing-top h1 span {
+	font-size: 24px;
+	position: relative;
+	top: -20px;
+	right: 2px;
+}
+
+.pricing-top p {
+	background-color: #edf5fd;
+	display: inline-block;
+	padding: 2px 9px;
+	border-radius: 5px;
+	font-weight: 300;
+}
+
+.pricing-bottom {
+	padding-left: 40px;
+}
+
+.pricing-bottom ul {
+	margin-bottom: 35px;
+}
+
+.pricing-bottom ul li {
+	margin-bottom: 17px;
+	color: #1c243e;
+}
+
+.pricing-bottom ul li i {
+	margin-right: 8px;
+}
+
+.pricing-btn {
+	padding-left: 38px;
+}
+
+.pricing-btn .default-btn {
+	border: 2px solid transparent;
+	background-color: #f4f7fa !important;
+	color: #1c243e;
+	padding: 18px 40px;
+}
+
+.pricing-btn .default-btn::after {
+	display: none;
+}
+
+.pricing-item2 {
+	background-color: #0071dc;
+	color: #fff;
+}
+
+.pricing-tag {
+	position: absolute;
+	top: 6px;
+	right: -18px;
+	display: inline-block;
+	background-color: #ffc221;
+	padding: 5px 19px;
+	font-size: 23px;
+	font-family: "circular Std";
+	transform: rotate(-90deg);
+}
+
+.switch {
+	display: flex;
+	align-items: center;
+}
+
+.switch span {
+	font-size: 19px;
+	color: #7a7a7a;
+	margin-right: 7px;
+}
+
+.switch .form-check-label {
+	font-size: 17px;
+	color: #7a7a7a;
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+#flexSwitchCheckChecked {
+	width: 73px;
+	height: 39px;
+}
+
+/*==============================pricing hover =================*/
+.pricing-items:hover {
+	background-color: #0071dc;
+}
+
+.pricing-items:hover .pricing-top h2 {
+	color: #fff;
+}
+
+.pricing-items:hover .pricing-top h1 {
+	color: #fff;
+}
+
+.pricing-items:hover .pricing-bottom ul li {
+	color: #fff;
+}
+
+.pricing-items:hover .pricing-top p {
+	background-color: #127bde;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.pricing-items:hover .pricing-btn .default-btn {
+	border: 2px solid #fff;
+	background-color: #0071dc !important;
+	color: #fff;
+}
+
+.pricing-item2 .pricing-top p {
+	background-color: #127bde !important;
+	color: #fff;
+}
+
+.pricing-item2 .pricing-bottom ul li {
+	color: #fff;
+}
+/*============================ pricing area section css end====================== */
+
+/*========================= testimonial-area section css start=================== */
+.testimonial-area {
+	padding-top: 125px;
+	padding-bottom: 130px;
+}
+
+.testimonial-items {
+	background-color: #fff;
+	padding: 60px 60px 44px 45px;
+	border-radius: 18px;
+	position: relative;
+}
+
+.testimonial-items::before {
+	content: "\f10d";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 600;
+	position: absolute;
+	top: -33px;
+	right: 23px;
+	font-size: 168px;
+	color: #ddd;
+	opacity: .19;
+	display: inline-block;
+}
+
+.mr-left {
+	margin-left: 120px;
+	margin-right: 10px;
+}
+
+.mr-right {
+	margin-left: 10px;
+	margin-right: 120px;
+}
+
+.testimonial-author-img {
+	margin-right: 20px;
+}
+
+.testimonial-author {
+	margin-bottom: 25px;
+}
+
+.testimonial-author-content {
+	
+}
+
+.testimonial-author-content h5 {
+	font-weight: 600;
+	font-size: 22px;
+}
+
+.testimonial-author-content p {
+	color: #0071dc !important;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.testi-content {
+	color: #1c243e;
+	line-height: 1.7;
+	padding: 0;
+}
+
+.testimonial-author {
+	position: relative;
+}
+
+.testimonial-author::before {
+	content: "\f10e";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 600;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	display: inline-block;
+	position: absolute;
+	top: -9px;
+	left: -17px;
+	margin: auto;
+	background-color: #0071dc;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 15px;
+	color: #fff;
+}
+
+.arow-icon {
+	color: #000;
+	height: 55px;
+	width: 55px;
+	line-height: 55px;
+	background-color: #f4f7fa;
+	border-radius: 50%;
+	font-size: 23px;
+	transition: .3s;
+}
+
+.arow-icon:hover {
+	background-color: #0071dc;
+	color: #fff;
+}
+
+/*========================= testimonial-area section css end=================== */
+/* ========================subscribe-area section css start ==================*/
+.subscribe-area {
+	background: url(https://i.postimg.cc/Gm9VsJ2v/subscribe-02.jpg)
+		no-repeat center center;
+	background-size: cover;
+	padding: 100px 0;
+}
+
+.subscribe-form input {
+	color: #161c2d;
+	height: 85px;
+	width: 100%;
+	padding: 0 27px;
+	border: none;
+	position: relative;
+	font-size:;
+}
+
+.subs-btn {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+/* ========================subscribe-area section css end ==================*/
+
+/* ========================footer area section css start===================== */
+.footer-top {
+	padding-top: 80px;
+}
+
+.footer-logo-text {
+	max-width: 75%;
+}
+
+.foot-social-link {
+	
+}
+
+.foot-social-link a {
+	font-size: 15px;
+}
+
+.foot-social-link a:nth-child(2) {
+	color: #1da1f2;
+}
+
+.foot-social-link a:nth-child(3) {
+	color: red;
+}
+
+.footer-weiget {
+	
+}
+
+.footer-weiget h5 {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 25px;
+}
+
+.footer-weiget ul {
+	
+}
+
+.footer-weiget ul li {
+	
+}
+
+.footer-weiget ul li a {
+	color: #7a7a7a;
+	margin-bottom: 12px;
+	display: inline-block;
+	transition: .5s;
+	text-decoration: none;
+	position: relative;
+}
+
+.footer-weiget ul li a:hover {
+	color: #0071dc;
+	padding-left: 15px;
+	transition: .5s;
+	position: relative;
+}
+
+.footer-weiget ul li a::before {
+	content: "\f054";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 600;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 15px;
+	transition: .5s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.footer-weiget ul li a:hover::before {
+	opacity: 1;
+	visibility: visible;
+}
+
+.insta-image {
+	
+}
+
+.insta-image a {
+	position: relative;
+	display: inline-block;
+}
+
+.insta-image a img {
+	width: 70px !important;
+}
+
+.insta-image a::before {
+	content: "\f16d";
+	font-family: "Font Awesome 5 Brands";
+	color: #fff;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, .6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	line-height: 70px;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+	transform: scale(0);
+}
+
+.insta-image a:hover::before {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+}
+/* footer hover */
+
+/* ========================footer area section css end===================== */
+@font-face {
+	font-family: 'Circular Std';
+	src: url('CircularStd-MediumItalic.eot');
+	src: local('Circular Std Medium Italic'),
+		local('CircularStd-MediumItalic'),
+		url('CircularStd-MediumItalic.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-MediumItalic.woff2') format('woff2'),
+		url('CircularStd-MediumItalic.woff') format('woff'),
+		url('CircularStd-MediumItalic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('CircularStd-Black.eot');
+	src: local('Circular Std Black'), local('CircularStd-Black'),
+		url('CircularStd-Black.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-Black.woff2') format('woff2'),
+		url('CircularStd-Black.woff') format('woff'),
+		url('CircularStd-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('CircularStd-Medium.eot');
+	src: local('Circular Std Medium'), local('CircularStd-Medium'),
+		url('CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-Medium.woff2') format('woff2'),
+		url('CircularStd-Medium.woff') format('woff'),
+		url('CircularStd-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('CircularStd-Bold.eot');
+	src: local('Circular Std Bold'), local('CircularStd-Bold'),
+		url('CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-Bold.woff2') format('woff2'),
+		url('CircularStd-Bold.woff') format('woff'),
+		url('CircularStd-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('CircularStd-BlackItalic.eot');
+	src: local('Circular Std Black Italic'),
+		local('CircularStd-BlackItalic'),
+		url('CircularStd-BlackItalic.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-BlackItalic.woff2') format('woff2'),
+		url('CircularStd-BlackItalic.woff') format('woff'),
+		url('CircularStd-BlackItalic.ttf') format('truetype');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Circular Std Book';
+	src: url('CircularStd-BookItalic.eot');
+	src: local('Circular Std Book Italic'), local('CircularStd-BookItalic'),
+		url('CircularStd-BookItalic.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-BookItalic.woff2') format('woff2'),
+		url('CircularStd-BookItalic.woff') format('woff'),
+		url('CircularStd-BookItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('CircularStd-BoldItalic.eot');
+	src: local('Circular Std Bold Italic'), local('CircularStd-BoldItalic'),
+		url('CircularStd-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-BoldItalic.woff2') format('woff2'),
+		url('CircularStd-BoldItalic.woff') format('woff'),
+		url('CircularStd-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Circular Std Book';
+	src: url('CircularStd-Book.eot');
+	src: local('Circular Std Book'), local('CircularStd-Book'),
+		url('CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+		url('CircularStd-Book.woff2') format('woff2'),
+		url('CircularStd-Book.woff') format('woff'),
+		url('CircularStd-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

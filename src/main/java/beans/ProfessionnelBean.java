@@ -16,8 +16,19 @@ public class ProfessionnelBean extends Utilisateur {
 	}
 	
 	
+	
 
 	
+	public ProfessionnelBean(String cin, String nom, String prenom, String email, String ville, String adresse,
+			String motdepasse, String sexe, String numTel, String emploie) {
+		super(cin, nom, prenom, email, ville, adresse, motdepasse, sexe, numTel);
+		this.emploie = emploie;
+	}
+
+
+
+
+
 	public ProfessionnelBean(String cin, String nom, String prenom, String email, String ville, String adresse,
 			String motdepasse, String sexe, String numTel, String emploie, String surMoi, int nbrEtoitle) {
 		super(cin, nom, prenom, email, ville, adresse, motdepasse, sexe, numTel);

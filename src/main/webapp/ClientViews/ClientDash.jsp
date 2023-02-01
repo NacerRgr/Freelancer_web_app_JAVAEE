@@ -50,7 +50,7 @@ body {
 }
 
 .navbar {
-	background-color: #fff;
+	background-color: #0d6efd;
 	display: flex;
 	justify-content: space-around;
 	margin-bottom: 30px;
@@ -112,6 +112,8 @@ form>div {
 .font {
 	font-size: 2rem;
 	font-family: 'Russo One', sans-serif;
+	color : #f8f9fa;
+	
 }
 
 .rating>input {
@@ -156,7 +158,7 @@ span {
 	<div class="navbar  shadow-sm">
 
 		<div class="divIcon">
-			<i class="bi bi-emoji-laughing" style="font-size: 2.5em;"> <a
+			<i class=" bi-emoji-wink-fill" style="font-size: 2.5em; color:#fff"> <a
 				href="ClientDashboardControll" class="font"> Bricoli Liya </a></i>
 
 		</div>
@@ -164,27 +166,27 @@ span {
 
 		<div class="navdiv">
 
-			<a href="#" class="btn btn-secondary">Mohamed Nacer Erragragy</a>
+			<a href="#" class="btn btn-secondary">${  sessionScope.client.getNom() }</a>
 
 			<div style="display: inline-block;">
-				<button class="btn btn-outline-primary dropdown-toggle"
+				<button class="btn btn-outline-light dropdown-toggle"
 					type="button" id="dropdownMenuButton" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false">Se déconnecter
 				</button>
 				<div class="dropdown-menu " aria-labelledby="hello">
-					<a class="dropdown-item btn btn-outline-primary"
+					<a class="dropdown-item btn btn-outline-light"
 						href="ClientViews/ajouterBesoin.jsp">lister un besoin</a> <a
-						class="dropdown-item btn btn-outline-primary"
+						class="dropdown-item btn btn-outline-light"
 						href="ClientDashboardControll?choice=mesBesoins">Mes Besoins</a> <a
-						class="dropdown-item btn btn-outline-primary"
+						class="dropdown-item btn btn-outline-light"
 						href="ClientDashboardControll?choice=mesInvitaitons">Mes
 						invitations envoyées</a> <a
-						class="dropdown-item btn btn-outline-primary"
+						class="dropdown-item btn btn-outline-light"
 						href="ClientDashboardControll?choice=mesDemandes">Demande
-						d'Emploies</a> <a class="dropdown-item btn btn-outline-primary"
+						d'Emploies</a> <a class="dropdown-item btn btn-outline-light"
 						href="ClientDashboardControll?choice=mesProfessionnels">Mes
 						Professionnels</a> <a href="#"
-						class="dropdown-item btn btn-outline-primary">Se déconnecter</a>
+						class="dropdown-item btn btn-outline-light">Se déconnecter</a>
 
 				</div>
 			</div>
@@ -205,7 +207,7 @@ span {
 
 
 				<select name="descr" class="form-select">
-					<option value="Taza">1 an éxpérience</option>
+					<option value="Taza">1 an d'éxpérience</option>
 					<option value="Tetouan">2 ans d'éxpérience</option>
 					<option value="Tiznit">3 ans d'éxpérience</option>
 				</select>
@@ -297,7 +299,7 @@ span {
 						${professionnel.getPrenom()}</h5>
 					<p class="p1" id="id1">${professionnel.getEmploie()}
 					<p>
-					<p class="card-text">${professionnel.getSurMoi()}</p>
+					
 
 
 

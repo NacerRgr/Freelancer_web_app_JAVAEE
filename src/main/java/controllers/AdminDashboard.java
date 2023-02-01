@@ -13,13 +13,13 @@ import beans.BesoinBean;
 import beans.ClientBean;
 import beans.ProfessionnelBean;
 import beans.Utilisateur;
-import daos.BesoinDao;
-import daos.ClientDao;
-import daos.ClientDaoImpl;
-import daos.DaoException;
-import daos.DaoFactory;
-import daos.ProfessionnelDao;
-import daos.ServiceDao;
+import daos1.BesoinDao;
+import daos1.ClientDao;
+import daos1.ClientDaoImpl;
+import daos1.DaoException;
+import daos1.DaoFactory;
+import daos1.ProfessionnelDao;
+import daos1.ServiceDao;
 
 /**
  * Servlet implementation class AdminDashboard

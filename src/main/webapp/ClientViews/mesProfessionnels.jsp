@@ -152,13 +152,13 @@ Se déconnecter  </button>
 							
 							<a class="btn btn-primary">en cours</a>
 						   </c:if>
-						   <c:if test="${progress.getProgres() == 'fini'}">  
+						   <c:if test="${progress.getProgres() == 'terminer'}">  
 							
 							<a class="btn btn-primary">fini</a>
 						   </c:if>
 					</td>
 						<td>
-						<c:if test="${progress.getProgres() == 'fini' && progress.getCommentaire() == ''}">  
+						<c:if test="${progress.getProgres() == 'terminer' && progress.getCommentaire() == ''}">  
 							<form action="ClientDashboardControll?choice=evaluerprof" method="POST">
 							<input type="hidden" value="${progress.getCin()}" name="cinPro"  >
 							<button class="btn btn-secondary" type="submit">évaluer</button>
@@ -170,7 +170,7 @@ Se déconnecter  </button>
 						
 						</c:if>
 						
-						<c:if test="${progress.getProgres() == 'fini' && progress.getCommentaire() != ''}">  
+						<c:if test="${progress.getProgres() == 'terminer' && progress.getCommentaire() != ''}">  
 							<button class="btn btn-success"
 							href="" disabled >déja évaluer</button>
 						

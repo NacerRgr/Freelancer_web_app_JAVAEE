@@ -11,13 +11,13 @@ import java.io.IOException;
 
 import beans.BesoinBean;
 import beans.EvaluationClient;
-import daos.AvisClientsDao;
-import daos.BesoinDao;
-import daos.ClientDao;
-import daos.DaoException;
-import daos.DaoFactory;
-import daos.InvitationPDao;
-import daos.ProfessionnelDao;
+import daos1.AvisClientsDao;
+import daos1.BesoinDao;
+import daos1.ClientDao;
+import daos1.DaoException;
+import daos1.DaoFactory;
+import daos1.InvitationPDao;
+import daos1.ProfessionnelDao;
 
 /**
  * Servlet implementation class ClientDashboardControll
